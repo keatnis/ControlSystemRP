@@ -21,6 +21,8 @@ Contraseña: admin
 # Modulo operador
 ![image](https://github.com/keatnis/ControlSystemRP/assets/95552515/a2f3692a-3355-427e-a0c5-be2f61e6f5aa)
 ![image](https://github.com/keatnis/ControlSystemRP/assets/95552515/2d42c126-52bb-4f30-978b-bdcfb9bef839)
+visualizacion de doc pdf (dar click dos veces al boton)
+![image](https://github.com/keatnis/ControlSystemRP/assets/95552515/6d43261d-1f73-441c-8e4b-c34b7fd9ecad)
 
 # Modulo User
 * la contaseña es encriptada al insertarse en la base de datos
@@ -49,6 +51,11 @@ Al buscar el servicio registrado por medio de la marca, modulo o nu de serie del
 ![image](https://github.com/keatnis/ControlSystemRP/assets/95552515/a24701d1-c8e3-4c15-947b-33aed2a253f4)
 Archivo Excel
 ![image](https://github.com/keatnis/ControlSystemRP/assets/95552515/0351b009-609f-4a5e-8d30-ac39403245b9)
+#Modulo flete
+![image](https://github.com/keatnis/ControlSystemRP/assets/95552515/e06bad0b-5473-428f-8fa6-384e4edd41ac)
+Registro flete
+![image](https://github.com/keatnis/ControlSystemRP/assets/95552515/ca307c77-01b6-4ded-afcf-90154e9f555a)
+
 
 
 

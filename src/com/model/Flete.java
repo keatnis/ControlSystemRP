@@ -1,4 +1,3 @@
-
 package com.model;
 
 import java.io.Serializable;
@@ -9,6 +8,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
@@ -28,7 +29,8 @@ import javax.persistence.TemporalType;
     @NamedQuery(name = "Flete.findByLugarSalida", query = "SELECT f FROM Flete f WHERE f.lugarSalida = :lugarSalida"),
     @NamedQuery(name = "Flete.findByResponsable", query = "SELECT f FROM Flete f WHERE f.responsable = :responsable"),
     @NamedQuery(name = "Flete.findByConcepto", query = "SELECT f FROM Flete f WHERE f.concepto = :concepto"),
-    @NamedQuery(name = "Flete.findByRecibe", query = "SELECT f FROM Flete f WHERE f.recibe = :recibe")})
+    @NamedQuery(name = "Flete.findByRecibe", query = "SELECT f FROM Flete f WHERE f.recibe = :recibe"),
+    })
 public class Flete implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -39,7 +41,7 @@ public class Flete implements Serializable {
     private Integer id;
     @Basic(optional = false)
     @Column(name = "fecha")
-    @Temporal(TemporalType.TIMESTAMP)
+    @Temporal(TemporalType.DATE)
     private Date fecha;
     @Basic(optional = false)
     @Column(name = "lugar_salida")
@@ -52,8 +54,75 @@ public class Flete implements Serializable {
     @Basic(optional = false)
     @Column(name = "recibe")
     private String recibe;
-
+    @Basic(optional = false)
+    @Column(name = "status")
+    private String status;
+    @ManyToOne()
+    @JoinColumn(name = "workplace_id")
+    private Workplace workplace;
+    @ManyToOne()
+    @JoinColumn(name = "asignacion_unidad_id")
+    private AsignacionUnidad asignacionUnidad;
+    @ManyToOne()
+    @JoinColumn(name = "recarga_combustible_id")
+    private RecargaCombustible recargaCombustible;
+    
     public Flete() {
+    }
+
+    public Flete(Integer id, Date fecha, String lugarSalida, String responsable, String concepto, String recibe, String status, Workplace workplace, AsignacionUnidad asignacionUnidad, RecargaCombustible recargaCombustible) {
+        this.id = id;
+        this.fecha = fecha;
+        this.lugarSalida = lugarSalida;
+        this.responsable = responsable;
+        this.concepto = concepto;
+        this.recibe = recibe;
+        this.status = status;
+        this.workplace = workplace;
+        this.asignacionUnidad = asignacionUnidad;
+        this.recargaCombustible = recargaCombustible;
+    }
+
+    public RecargaCombustible getRecargaCombustible() {
+        return recargaCombustible;
+    }
+
+    public void setRecargaCombustible(RecargaCombustible recargaCombustible) {
+        this.recargaCombustible = recargaCombustible;
+    }
+
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public Workplace getWorkplace() {
+        return workplace;
+    }
+
+    public void setWorkplace(Workplace workplace) {
+        this.workplace = workplace;
+    }
+
+
+    public Workplace getLugarTrabajo() {
+        return workplace;
+    }
+
+    public void setLugarTrabajo(Workplace lugarTrabajo) {
+        this.workplace = lugarTrabajo;
+    }
+
+    public AsignacionUnidad getAsignacionUnidad() {
+        return asignacionUnidad;
+    }
+
+    public void setAsignacionUnidad(AsignacionUnidad asignacionUnidad) {
+        this.asignacionUnidad = asignacionUnidad;
     }
 
     public Flete(Integer id) {
@@ -140,5 +209,5 @@ public class Flete implements Serializable {
     public String toString() {
         return "com.model.Flete[ id=" + id + " ]";
     }
-    
+
 }
