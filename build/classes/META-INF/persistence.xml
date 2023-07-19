@@ -20,9 +20,10 @@
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3308/pr?serverTimezone=UTC"/>
       <property name="javax.persistence.jdbc.user" value="root"/>
       <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
-      <property name="javax.persistence.jdbc.password" value="r4m1r0-0"/>
+      <property name="javax.persistence.jdbc.password" value=""/>
       <property name="hibernate.hbm2ddl.auto" value="create"/>
-      <property name="javax.persistence.schema-generation.database.action" value="create-or-extend-tables"/>
+      <property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>
+      <property name="jakarta.persistence.schema-generation.database.action" value="drop-and-create"/>
     </properties>
   </persistence-unit>
 </persistence>
